@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -25,13 +26,11 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 
-import javax.swing.text.html.Option;
+
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashSet;
-import java.util.Optional;
 import java.util.ResourceBundle;
-import java.util.Set;
+
 
 @Controller
 @Slf4j
@@ -97,9 +96,21 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        User user = new User();
+        user.setName("fdsfds");
+        user.setEmail("dsfds@hotmail.com");
+        user.setPassword("2");
+        user.setUsername("dfd");
 
+        try {
+            userService.save(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
     }
+
+
 
 }
