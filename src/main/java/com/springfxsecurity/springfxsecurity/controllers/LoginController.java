@@ -75,9 +75,8 @@ public class LoginController implements Initializable {
             lblLogin.setText(userService.test());
             log.info(userService.customFind((long)(1)).getName());
 
-
-
         } catch (AuthenticationException e) {
+            log.error(e.getMessage());
             lblLogin.setText("Login Failed.");
         } catch (Exception e) {
             e.printStackTrace();
@@ -95,7 +94,7 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        
+
     }
 
 
