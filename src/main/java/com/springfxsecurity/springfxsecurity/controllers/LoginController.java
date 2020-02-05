@@ -95,20 +95,7 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        User user = new User();
-        user.setName("fdsfds");
-        user.setEmail("dsfds@hotmail.com");
-        user.setPassword("2");
-        user.setUsername("dfd");
-
-        try {
-            userService.save(user);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
+        
     }
 
 
